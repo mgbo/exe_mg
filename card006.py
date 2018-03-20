@@ -28,7 +28,7 @@ class Card006(Card):
 
 	def __lt__(self, other):
 		return self.chislo<other.chislo
-
+'''
 class Row(Card006):
 	Max_LEN = 5
 	def __int__(self, ryad):
@@ -37,8 +37,7 @@ class Row(Card006):
 
 	def put_katy(self, other):
 		self.ryad.append(other.chislo)
-
-
+'''
 
 if __name__ == "__main__":
 	c1 = Card006(15)

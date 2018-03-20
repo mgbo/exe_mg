@@ -5,19 +5,19 @@ from container import Container
 class Card006(Card):
 	point = {1:1, 5:2,10:3, 11:5, 55:7}
 
-	def __init__(self, chislo):
+	def __init__(self, chislo=0):
 		self.chislo = Card006.get_chislo(chislo)
 
 	@staticmethod
 	def get_chislo(chislo):
-		if chislo int range(0,104):
+		if chislo in range(0,104):
 			return chislo
 		else:
 			raise ValueError("Число Карты {} не должно превышать 104".format(chislo))
 
 	def score(self):
 		for n in sorted(Card006.point.keys(), reverse=True):
-			if self.chislo % n ==0:
+			if self.chislo % n == 0:
 				return Card006.point[n]
 
 	def __str__(self):
@@ -29,7 +29,7 @@ class Card006(Card):
 	def __lt__(self, other):
 		return self.chislo<other.chislo
 
-		
+
 
 if __name__ == "__main__":
 	c1 = Card006(15)

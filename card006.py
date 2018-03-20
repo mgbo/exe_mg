@@ -10,7 +10,7 @@ class Card006(Card):
 
 	@staticmethod
 	def get_chislo(chislo):
-		if chislo <= 104:
+		if chislo int range(0,104):
 			return chislo
 		else:
 			raise ValueError("Число Карты {} не должно превышать 104".format(chislo))

@@ -1,9 +1,15 @@
 
-class Row:
+from Card006 import Card006
+
+class Row(Card006):
 	Max_LEN = 5
-	def __int__(self, ryad):
-		self.ryad=[]
+	def __int__(self, row_kat=[]):
+		self.rkat = row_kat
 
 
 	def put_katy(self, other):
-		self.ryad.append(other.chislo)
+		if len(self.row_kat) <= Row.Max_LEN:
+			 self.ryad.append(other.chislo)
+
+	def chack(self):
+		pass

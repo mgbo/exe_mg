@@ -2,25 +2,28 @@
 from card006 import Card006
 
 class Row(Card006):
+
 	Max_LEN = 5
-	def __int__(self, row_kat=[]):
-		self.row_kat = row_kat
+	def __init__(self, r_k=[]):
+		self.r_k = r_k
 
-	def __str__(self):
-		return ' '.join(self.row_kat)
-
-	def put_katy(self, other_card):
-		self.row_kat.append(other_card)
+	def put_katy(self, other_c):
+		self.r_k.append(other_c)
 
 	def check(self):
 		"""good row or not good True/False"""
+		pass
 
 	def cut(self):
 		"""cut all cards except the last, return cutted cards or score of all cutted cards"""
+		pass
 
 	def need_cut(self):
 		return len(self.row_kat) == Row.Max_LEN
 
+	def __str__(self):
+		s =' '.join([str(n) for n in self.r_k])
+		return s
 
 class Table(object):
 	MAX_ROW = 4
@@ -38,11 +41,12 @@ class Table(object):
 
 
 def test_row():
+
 	r1 = Row()
-	#r1.put_katy(3)
-	#r1.put_katy(Card006(3))
-	#r1.put_katy(Card006(12))
-	#r1.put_katy(Card006(35))
+
+	r1.put_katy(Card006(3))
+	r1.put_katy(Card006(12))
+	r1.put_katy(Card006(35))
 
 	print(r1)
 
@@ -55,8 +59,10 @@ def test_row():
 
 	assert(r1.need_cut() == False)
 	'''
-
-
+	
 if __name__ == '__main__':
 	test_row()
+	
+
+
 

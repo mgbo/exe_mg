@@ -7,10 +7,15 @@ class Card006(Card):
 
 	def __init__(self, chislo=0):
 		self.chislo = Card006.get_chislo(chislo)
+		self.all_card = []
 
+    @staticmethod
+    def all_cards():
+    	return [Card006(x) for x in range(1, 105)].shuffle()
+    	
 	@staticmethod
 	def get_chislo(chislo):
-		if chislo in range(0,104):
+		if chislo in range(0,105):
 			return chislo
 		else:
 			raise ValueError("Число Карты {} не должно превышать 104".format(chislo))
